@@ -9,6 +9,7 @@ import (
 )
 
 const usernameQuery = "table.user-item > tbody > tr:nth-child(2) > td.info > a > span.username"
+const moreButtonQuery = "div.w-button-more > a"
 
 func main() {
 	var users []string
@@ -25,7 +26,7 @@ func main() {
 		users = append(users, strings.Trim(e.Text, "@"))
 	})
 
-	c.OnHTML("div.w-button-more > a", func(e *colly.HTMLElement) {
+	c.OnHTML(moreButtonQuery, func(e *colly.HTMLElement) {
 		e.Request.Visit(e.Attr("href"));
 	})
 

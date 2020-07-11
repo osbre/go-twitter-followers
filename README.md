@@ -1,4 +1,6 @@
-# Installation
+A simple script to get Twitter account followers.
+
+## Installation
 
 ```bash
 git clone git@github.com:osbre/go-twitter-followers.git
